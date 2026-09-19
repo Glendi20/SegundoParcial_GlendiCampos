@@ -2,14 +2,15 @@
 
 ## 1. Backlog y trazabilidad
 
-| Rama | RQF cubiertos | RQNF cubiertos | PR |
+| Rama | RQF cubiertos | RQNF cubiertos | Pull Request |
 |---|---|---|---|
-| `feature/docker-mysql-schema` | RQF-01 (datos base) | RQNF-01, RQNF-02, RQNF-04 | `[PENDIENTE: link al PR #]` |
-| `feature/api-rest-citas` | RQF-01, RQF-06, RQF-07, RQF-08 | RQNF-03, RQNF-04 | `[PENDIENTE: link al PR #]` |
-| `feature/validacion-conflictos-estados` | RQF-03, RQF-05, RQF-10 | RQNF-03, RQNF-04, RQNF-07 | `[PENDIENTE: link al PR #]` |
-| `feature/fullcalendar-ui` | RQF-02, RQF-04, RQF-09, RQF-10 | RQNF-06 | `[PENDIENTE: link al PR #]` |
+| `feature/docker-mysql-schema` | RQF-01 | RQNF-01, RQNF-02, RQNF-04 | [#1](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/1) |
+| `feature/api-rest-citas` | RQF-06, RQF-07, RQF-08 | RQNF-03, RQNF-04 | [#2](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/2) |
+| `feature/validacion-conflictos-estados` | RQF-03, RQF-05 | RQNF-03, RQNF-07 | [#3](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/3) |
+| `feature/fullcalendar-ui` | RQF-02, RQF-04, RQF-09, RQF-10 | RQNF-06 | [#4](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/4) |
+| `fix/interfaz-profesional` | RQF-09, RQF-10 | RQNF-06 | [#5](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/5) |
 
-> Las ramas, commits, Pull Requests y merges a `main` los crea el estudiante (ver guía de commits acordada). Esta sección se completa al finalizar ese flujo.
+Cada Pull Request incluye descripción, lista de RQF/RQNF cubiertos y evidencia, y fue fusionado a `main` con el botón *Merge pull request* de GitHub (merge commit).
 
 ## 2. Docker — MySQL con persistencia
 
@@ -189,16 +190,47 @@ Probado con Playwright (Chromium headless) contra la app real, sin errores de co
 ## 7. Historial Git
 
 ```bash
-git log --graph --all --oneline
+git log --graph --oneline
 ```
 
 ```
-[PENDIENTE: pegar salida una vez creadas las ramas/commits/PRs]
+*   304007a Merge pull request #5 from Glendi20/fix/interfaz-profesional
+|\
+| * b4d6197 mejora el diseño de la interfaz: header con marca, tema personalizado de FullCalendar, modales pulidos (RQF-09, RQF-10, RQNF-06)
+|/
+*   fb758a0 Merge pull request #4 from Glendi20/feature/fullcalendar-ui
+|\
+| * 04b7c0c agrega evidencia de ejecucion: docker, api, tests y capturas
+| * 7e8816a integra FullCalendar con crear, detalle, drag & drop y colores por estado (RQF-04, RQF-09, RQF-10, RQNF-06)
+| * 2a869d4 agrega controlador de la vista de calendario
+| * dde7fbb agrega FullCalendar y Alpine.js como dependencias (RQF-02)
+|/
+*   cfa2ad1 Merge pull request #3 from Glendi20/feature/validacion-conflictos-estados
+|\
+| * c48ffee agrega excepcion de conflicto de horario para citas (RQF-03, RQNF-07)
+|/
+*   266cfe3 Merge pull request #2 from Glendi20/feature/api-rest-citas
+|\
+| * f6bc6cc agrega controladores y rutas REST de citas, doctores y pacientes (RQF-06, RQF-07, RQNF-03)
+| * 3e49bc6 agrega CitaService, DoctorService y PacienteService (RQNF-04)
+| * 2ecc256 agrega form requests y resources para citas, doctores y pacientes (RQF-08)
+|/
+*   543e922 Merge pull request #1 from Glendi20/feature/docker-mysql-schema
+|\
+| * b936746 completa el esqueleto de Laravel: bootstrap, config, storage y proveedor de servicios (RQNF-04)
+| * 69cc0a8 agrega modelos, factories y datos semilla minimos (RQF-01)
+| * 9441de8 crea migraciones de pacientes, doctores y citas con enum de estado (RQF-01
+| * 7880c58 crea migraciones de pacientes, doctores y citas con enum de estado (RQF-01
+| * 8657030 agrega docker
+| * 0275254 agrega docker-compose con MySQL 8 y persistencia por volumen (RQNF-01, RQNF-02
+|/
+* 5332d72 subiendo readme
 ```
 
 Pull Requests fusionados a `main`:
 
-1. `[PENDIENTE]` `feature/docker-mysql-schema` → `main`
-2. `[PENDIENTE]` `feature/api-rest-citas` → `main`
-3. `[PENDIENTE]` `feature/validacion-conflictos-estados` → `main`
-4. `[PENDIENTE]` `feature/fullcalendar-ui` → `main`
+1. [#1 `feature/docker-mysql-schema`](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/1) — merge `543e922`
+2. [#2 `feature/api-rest-citas`](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/2) — merge `266cfe3`
+3. [#3 `feature/validacion-conflictos-estados`](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/3) — merge `cfa2ad1`
+4. [#4 `feature/fullcalendar-ui`](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/4) — merge `fb758a0`
+5. [#5 `fix/interfaz-profesional`](https://github.com/Glendi20/SegundoParcial_GlendiCampos/pull/5) — merge `304007a`
